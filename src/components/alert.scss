@@ -1,0 +1,72 @@
+// Default styles
+$DefaultBG: rgb(29 31 32 /71%);
+$DefaultColor: #c8c8c8;
+$DefaultBorder:#c8c8c8;
+
+// Error Style
+$DangerBorder: rgba(255, 25, 0, 0.322);
+$DangerBG: rgba(192 29 29 /15%);
+$DangerColor:#E88B89;
+
+// Success Style
+
+$SuccessBorder: rgba(0, 255, 0, 0.322);
+$SuccessBG: rgba(0, 255, 0, 15%);
+$SuccessColor:#00FF00;
+
+// Warning Style
+
+$WarningBorder: rgba(255, 255, 0, 0.322);
+$WarningBG: rgba(255, 255, 0, 15%);
+$WarningColor:#eb4545;
+
+// Info Style   
+
+$InfoBorder: rgba(0, 0, 255, 0.322);
+$InfoBG: rgba(0, 0, 255, 15%);
+$InfoColor:#4848e8;
+
+// Mixin Style is as Function In Sass
+@mixin alert($name,$borderColor,$BgColor,$color){
+    .#{$name}{
+        border: 3px dotted $borderColor;
+        border-radius: 0.8rem;
+        padding: 1.3rem;
+        background-color: $BgColor;
+        color: $color;
+        margin-bottom: 30px;
+        .alert-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            div{
+                display: flex;
+            align-items: center;
+            
+            }
+            h4{
+                margin-left: 15px;
+                font-size: 22px;
+            }
+           span svg{
+                cursor: pointer;
+                background-color: black;
+            }
+        }
+        p{
+            margin-top: 1.2rem;
+            line-height: 2;
+            font-weight: 500;
+        }
+    }
+}
+
+@include alert("alert-danger",$DangerBorder ,$DangerBG ,$DangerColor );
+
+@include alert("alert-success",$SuccessBorder ,$SuccessBG ,$SuccessColor );
+
+@include alert("alert-warning",$WarningBorder ,$WarningBG ,$WarningColor );
+
+@include alert("alert-info",$InfoBorder ,$InfoBG ,$InfoColor );
+
+@include alert("alert-default",$DefaultBorder ,$DefaultBG ,$DefaultColor );
