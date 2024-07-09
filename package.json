@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+     "install:linux": "npm install @rollup/rollup-linux-x64-gnu",
+  "install:windows": "echo 'Skipping Linux-specific dependency on Windows'"
   },
   "dependencies": {
     "lucide-react": "^0.403.0",
